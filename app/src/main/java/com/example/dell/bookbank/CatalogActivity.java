@@ -48,8 +48,8 @@ public class CatalogActivity extends AppCompatActivity {
 
     private void displayDatabaseInfo(){
 
-        BookDbHelper bookHelper = new BookDbHelper(this);
-        SQLiteDatabase db = bookHelper.getReadableDatabase();
+        BookDbHelper bookDbHelper = new BookDbHelper(this);
+        SQLiteDatabase db = bookDbHelper.getReadableDatabase();
 
         String[] projection = {
                 BookEntry._ID,
@@ -103,8 +103,8 @@ public class CatalogActivity extends AppCompatActivity {
                 String currentName = cursor.getString(nameColumnIndex);
                 String currentPrice = cursor.getString(priceColumnIndex);
                 String currentQuantity = cursor.getString(quantityColumnIndex);
-                String currentSName = cursor.getString(quantityColumnIndex);
-                String currentSPName = cursor.getString(quantityColumnIndex);
+                String currentSName = cursor.getString(sNameColumnIndex);
+                String currentSPName = cursor.getString(sContactColumnIndex);
                 // Display the values from each column of the current row in the cursor in the TextView
                 displayView.append(("\n" + currentID + " \t " +
                         currentName + " \t " +
@@ -121,11 +121,7 @@ public class CatalogActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_catalog, menu);
@@ -145,5 +141,5 @@ public class CatalogActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
