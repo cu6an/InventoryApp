@@ -4,6 +4,7 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
 public class BookProvider extends ContentProvider {
@@ -56,6 +57,9 @@ public class BookProvider extends ContentProvider {
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        
+        /*Get readable database since we only intend to read, and not insert/update or delete*/
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
         return null;
     }
 
