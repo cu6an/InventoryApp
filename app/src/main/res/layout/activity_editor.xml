@@ -8,26 +8,31 @@
     <EditText
         android:id="@+id/product_name"
         android:layout_width="match_parent"
+        android:hint="@string/product_name"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="match_parent"
+        android:hint="@string/price"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/quantity"
         android:layout_width="match_parent"
+        android:hint="@string/quantity"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/supplier_name"
         android:layout_width="match_parent"
+        android:hint="@string/supplier_name"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/supplier_contact"
         android:layout_width="match_parent"
+        android:hint="@string/supplier_contact"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

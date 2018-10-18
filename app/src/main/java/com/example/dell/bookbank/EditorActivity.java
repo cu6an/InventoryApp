@@ -1,3 +1,5 @@
+/*Icons from icons8.com*/
+
 package com.example.dell.bookbank;
 
 import android.content.ContentValues;
@@ -10,13 +12,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.example.dell.bookbank.data.BookContract;
 import com.example.dell.bookbank.data.BookDbHelper;
 
 import static com.example.dell.bookbank.data.BookContract.*;
 
 public class EditorActivity extends AppCompatActivity {
 
+    /*EditText fields assigned variable names*/
     private EditText pNameEditText;
     private EditText priceEditText;
     private EditText quantityEditText;
@@ -28,6 +30,8 @@ public class EditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
+        /*Variable names of the edit text fields are pointed to the respective IDs' of the EditText fields
+         * in the layout file*/
         pNameEditText = (EditText) findViewById(R.id.product_name);
         priceEditText = (EditText) findViewById(R.id.price);
         quantityEditText = (EditText) findViewById(R.id.quantity);
@@ -35,11 +39,12 @@ public class EditorActivity extends AppCompatActivity {
         supplierContactEditText = (EditText) findViewById(R.id.supplier_contact);
     }
 
-    private void insertBook(){
+    /*Definition othe insertBook method for adding a book to the databse*/
+    private void insertBook() {
 
         String pNameString = pNameEditText.getText().toString().trim();
-        String priceString = priceEditText.getText().toString().trim();
-        String quantityString = quantityEditText.getText().toString().trim();
+        int priceInt = Integer.parseInt(priceEditText.getText().toString().trim());
+        int quantityInt = Integer.parseInt(quantityEditText.getText().toString().trim());
         String supplierString = supplierNameEditText.getText().toString().trim();
         String supplierContactString = supplierContactEditText.getText().toString().trim();
 
@@ -49,8 +54,8 @@ public class EditorActivity extends AppCompatActivity {
 
         ContentValues values = new ContentValues();
         values.put(BookEntry.COLUMN_PRODUCT_NAME, pNameString);
-        values.put(BookEntry.COLUMN_PRICE, priceString);
-        values.put(BookEntry.COLUMN_QUANTITY, quantityString);
+        values.put(BookEntry.COLUMN_PRICE, priceInt);
+        values.put(BookEntry.COLUMN_QUANTITY, quantityInt);
         values.put(BookEntry.COLUMN_SUPPLIER_NAME, supplierString);
         values.put(BookEntry.COLUMN_SUPPLIER_CONTACT, supplierContactString);
 
@@ -59,8 +64,7 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_editor.xml file.
-        // This adds menu items to the app bar.
+        /*Inflate the menu options in the Editor Activity*/
         getMenuInflater().inflate(R.menu.editor_menu, menu);
         return true;
     }
@@ -74,11 +78,7 @@ public class EditorActivity extends AppCompatActivity {
                 insertBook();
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
-            // Respond to a click on the "Delete" menu option
-            case R.id.action_delete:
-                // Do nothing for now
-                return true;
-            // Respond to a click on the "Up" arrow button in the app bar
+
             case android.R.id.home:
                 // Navigate back to parent activity (CatalogActivity)
                 NavUtils.navigateUpFromSameTask(this);

@@ -6,7 +6,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icons8_book_filled_100"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -23,7 +24,7 @@
         <activity
             android:name=".EditorActivity"
             android:label="Add a book"
-            android:parentActivityName=".CatalogActivity" >
+            android:parentActivityName=".CatalogActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
