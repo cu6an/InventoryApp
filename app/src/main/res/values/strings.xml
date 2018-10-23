@@ -6,4 +6,9 @@
     <string name="quantity">Quantity</string>
     <string name="supplier_name">Suppler Name</string>
     <string name="supplier_contact">Supplier Contact</string>
+    <string name="product_details">PRODUCT DETAILS:</string>
+    <string name="call_suppler">Call Supplier</string>
+    <string name="lonely_here">Quite LONELY HERE</string>
+    <string name="add_books">Add some books to the database</string>
+    <string name="delete_not_supported">Deletion is not supported </string>
 </resources>

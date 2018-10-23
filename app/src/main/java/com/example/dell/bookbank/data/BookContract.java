@@ -11,7 +11,7 @@ public class BookContract {
     /**
      * The "Content authority" represents the entire content provider, similar to the
      * relationship between a domain name and its website. We use the package name for the app to represent
-     * Content authority. Pacakage name is guaranteed to be unique on the device
+     * Content authority. Package name is guaranteed to be unique on the device
      */
     public static final String CONTENT_AUTHORITY = "com.example.dell.bookbank";
 
@@ -24,10 +24,11 @@ public class BookContract {
     public static final String PATH_BOOKS = "books";
 
     /*The constructor of the Book contract left blank, so its not used anywhere*/
-    private  BookContract(){}
+    private BookContract() {
+    }
 
     /*Class BookEntry with the database column-header names*/
-    public static final class BookEntry implements BaseColumns{
+    public static final class BookEntry implements BaseColumns {
 
         /**
          * The content URI to access the book data in the provider
